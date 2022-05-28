@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.js" crossorigin></script>
+    <script src="https://unpkg.com/redux@4/dist/redux.js" crossorigin></script>
 </head>
 
 <body>
@@ -139,7 +140,7 @@ function changeLotPrice (id, price) {
 
 // ##########################
 
-class Store {
+/*class Store {
   constructor (reducer, initialState) {
     this.reducer = reducer
     this.state = reducer(initialState, { type: null })
@@ -176,7 +177,9 @@ function combineReducers(reducers) {
   }
 }
 
-const store = new Store(combineReducers({
+const store = new Store(combineReducers({*/
+
+const store = Redux.createStore(Redux.combineReducers({
   clock: clockReducer,
   auction: auctionReducer
 }))
